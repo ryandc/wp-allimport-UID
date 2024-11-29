@@ -6,7 +6,8 @@ This really needs to be combined with other data on your spreadsheet and is defi
 Use `[wpai_increment_number_persistent()]` to place the index.
 
 Add the following to your WP allimport functions:
-`function wpai_increment_number_persistent() {
+```
+function wpai_increment_number_persistent() {
     // Check if the counter has been initialized.
     $current_number = get_option('wpai_last_used_number', 0);
 
@@ -25,5 +26,5 @@ function wpai_reset_increment_number() {
 }
 add_action('pmxi_before_xml_import', 'wpai_reset_increment_number');
 
-`
+```
 The last function and action resets the count, to ensure you can process the same data again.
